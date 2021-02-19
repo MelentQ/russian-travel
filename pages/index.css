@@ -1,1 +1,422 @@
 @import url(../vendor/normalize.css);
+
+@font-face {
+  font-family: 'Inter';
+  font-style:  normal;
+  font-weight: 400;
+  src: url(../vendor/fonts/Inter-Regular.woff2) format('woff2'),
+       url(../vendor/fonts/Inter-Regular.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:  normal;
+  font-weight: 700;
+  src: url(../vendor/fonts/Inter-Bold.woff2) format('woff2'),
+       url(../vendor/fonts/Inter-Bold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:  normal;
+  font-weight: 900;
+  src: url(../vendor/fonts/Inter-Black.woff2) format('woff2'),
+       url(../vendor/fonts/Inter-Black.woff) format('woff');
+}
+
+/* div, p, h1, h2, h3, h4, img, a, span, ul, li, section {
+  border: solid 1px red;
+} */
+
+.page {
+  background-color: #2A2C2F;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+/* ======
+link transition */
+
+.link {
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+}
+
+.link:hover {
+  opacity: 0.75;
+}
+
+/* ======
+section */
+
+.section {
+  /* box-sizing: border-box; */
+  margin: 0 auto;
+  max-width: 1184px;
+  min-width: 288px;
+}
+
+@media screen and (max-width: 1079px) {
+  .section {
+    max-width: calc(100% - 48px*2);
+  }
+}
+
+.section_narrow {
+  max-width: 984px;
+}
+
+@media screen and (max-width: 1079px) {
+  .section_narrow {
+    max-width: calc(100% - 48px*2);
+  }
+}
+
+/* ======
+header */
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  margin-top: 28px;
+  min-height: 52px;
+}
+
+.header__logo {
+  display: block; /* Иначе размеры становятся 0, почему? */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+
+  width: 176px;
+  height: 52px;
+
+  background-image: url(../images/logo.svg);
+}
+
+.header__lang-link {
+  margin-right: 18px;
+  margin-bottom: 6px;
+
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 1.17;
+  font-weight: 400;
+}
+
+.header__lang-link:last-of-type {
+  margin-right: 0;
+}
+
+.header__lang-link_active {
+  text-decoration: underline;
+  /* Исправить толщину подчеркивания */
+}
+
+/* ======
+lead */
+
+.lead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 56px;
+}
+
+.lead__title {
+  margin: 0;
+  max-width: 720px;
+
+  font-size: 96px;
+  line-height: 1.04;
+  font-weight: 900;
+  text-align: center;
+}
+
+.lead__subtitle {
+  margin-top: 32px;
+  margin-bottom: 64px;
+  max-width: 640px;
+
+  font-size: 30px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.lead__image {
+  margin: 0;
+  width: 100%;
+}
+
+.photo {
+  display: block;
+
+  width: 100%;
+}
+
+.photo__caption {
+  margin-top: 8px;
+
+  font-size: 10px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  /* Перевести в px? */
+}
+
+/* ======
+intro */
+
+/* Как "элегантно" сдвинуть влево? */
+
+.intro {
+  margin-top: 92px;
+  margin-bottom: 92px;
+}
+
+.intro__text-box {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 690px;
+}
+
+.intro__title {
+  margin: 0;
+
+  font-size: 54px;
+  line-height: 1.07;
+  font-weight: 900;
+}
+
+.intro__text {
+  margin-top: 40px;
+  margin-bottom: 0;
+
+  font-size: 16px;
+  line-height: 1.63;
+}
+
+.intro__list {
+  margin: 33px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.intro__list-item {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.accent {
+  font-weight: 700;
+}
+
+/* ======
+photo-grid */
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media screen and (max-width: 1279px) {
+  .photo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.photo-grid__item {
+  width: 100%;
+}
+
+/* ======
+places */
+
+.places {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 92px;
+}
+
+.place {
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  gap: 48px 40px;
+
+  margin-bottom: 80px;
+}
+
+@media screen and (max-width: 1279px) {
+  .place {
+    grid-template-columns: 440px 1fr;
+  }
+}
+
+.place:last-of-type {
+  margin-bottom: 0;
+}
+
+.place__title {
+  margin: 0;
+
+  font-size: 72px;
+  line-height: 1.06;
+  font-weight: 900;
+}
+
+.place__website {
+  align-self: flex-end;
+}
+
+.place__website-label {
+  margin-top: 0;
+  margin-bottom: 12px;
+
+  color: #aaaaaa;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.2em;
+  /* Перевести в px? */
+}
+
+.place__website-link {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.22;
+}
+
+.place__description-paragraph {
+  margin-top: 0;
+  margin-bottom: 26px;
+
+  font-size: 18px;
+  line-height: 1.61;
+}
+
+.place__description-paragraph:last-of-type {
+  margin-bottom: 0;
+}
+
+/* ======
+cover */
+
+.cover {
+  margin-top: 92px;
+  margin-bottom: 92px;
+  max-height: 740px;
+}
+
+.cover__link {
+  display: block;
+  position: relative;
+
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.cover__link:before {
+  content: '';
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-color: #2A2C2F;
+  opacity: 0.3;
+  transition: opacity 0.5s ease;
+}
+
+.cover__link:hover:before {
+  opacity: 0.8;
+}
+
+.cover__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+}
+
+.cover__title {
+  margin: 0;
+  max-width: 560px;
+
+  text-align: center;
+  font-size: 72px;
+  line-height: 1.06;
+  font-weight: 900;
+}
+
+.cover__subtitle {
+  margin-top: 32px;
+  margin-bottom: 0;
+  max-width: 360px;
+
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.22;
+}
+
+.cover__background {
+  display: block;
+  width: 100%;
+}
+
+/* ======
+footer */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 24px;
+}
+
+.footer__links {
+  display: flex;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.footer__link {
+  margin-right: 18px;
+
+  font-size: 16px;
+  line-height: 1.13;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer__link:last-of-type {
+  /* margin-right: 0; */
+  /* Не работает, потому что ссылки вложены в <li>. Как исправить? */
+}
+
+.footer__copyright {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.14;
+}
