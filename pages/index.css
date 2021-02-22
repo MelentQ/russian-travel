@@ -55,12 +55,31 @@ section */
   /* box-sizing: border-box; */
   margin: 0 auto;
   max-width: 1184px;
-  min-width: 288px;
+  /* min-width: 288px; */
 }
 
-@media screen and (max-width: 1079px) {
+@media screen and (max-width: 1279px) {
   .section {
     max-width: calc(100% - 48px*2);
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .section {
+    max-width: calc(100% - 24px*2);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section {
+    max-width: calc(100% - 16px*2);
+  }
+}
+
+/* Насколько это правильно? */
+@media screen and (max-width: 1279px) {
+  .section_place_cover {
+    max-width: 100%;
   }
 }
 
@@ -68,9 +87,21 @@ section */
   max-width: 984px;
 }
 
-@media screen and (max-width: 1079px) {
+@media screen and (max-width: 1279px) {
   .section_narrow {
     max-width: calc(100% - 48px*2);
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .section_narrow {
+    max-width: calc(100% - 24px*2);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section_narrow {
+    max-width: calc(100% - 16px*2);
   }
 }
 
@@ -87,6 +118,13 @@ header */
   min-height: 52px;
 }
 
+@media screen and (max-width: 767px) {
+  .header {
+    margin-top: 16px;
+    min-height: 42px;
+  }
+}
+
 .header__logo {
   display: block; /* Иначе размеры становятся 0, почему? */
   position: absolute;
@@ -98,6 +136,14 @@ header */
   height: 52px;
 
   background-image: url(../images/logo.svg);
+  background-size: cover;
+}
+
+@media screen and (max-width: 767px) {
+  .header__logo {
+    width: 144px;
+    height: 42px;
+  }
 }
 
 .header__lang-link {
@@ -113,6 +159,13 @@ header */
 
 .header__lang-link:last-of-type {
   margin-right: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .header__lang-link {
+    font-size: 18px;
+    line-height: 1.11;
+  }
 }
 
 .header__lang-link_active {
@@ -131,6 +184,12 @@ lead */
   margin-top: 56px;
 }
 
+@media screen and (max-width: 1279px) {
+  .lead {
+    margin-top: 48px;
+  }
+}
+
 .lead__title {
   margin: 0;
   max-width: 720px;
@@ -139,6 +198,13 @@ lead */
   line-height: 1.04;
   font-weight: 900;
   text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .lead__title {
+    font-size: 40px;
+    line-height: 1.1;
+  }
 }
 
 .lead__subtitle {
@@ -151,18 +217,48 @@ lead */
   text-align: center;
 }
 
+@media screen and (max-width: 1279px) {
+  .lead__subtitle {
+    margin-bottom: 56px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .lead__subtitle {
+    margin-top: 16px;
+    margin-bottom: 40px;
+
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
 .lead__image {
   margin: 0;
   width: 100%;
 }
 
-.photo {
+.lead__photo {
   display: block;
 
   width: 100%;
 }
 
-.photo__caption {
+@media screen and (max-width: 1023px) {
+  .lead__photo {
+    transform: translateX(-24px);
+    width: 100vw;
+    /* Так можно? */
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .lead__photo {
+    transform: translateX(-16px);
+  }
+}
+
+.lead__photo-caption {
   margin-top: 8px;
 
   font-size: 10px;
@@ -182,11 +278,31 @@ intro */
   margin-bottom: 92px;
 }
 
+@media screen and (max-width: 1023px) {
+  .intro {
+    margin-top: 88px;
+    margin-bottom: 88px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .intro {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+}
+
 .intro__text-box {
   display: flex;
   flex-direction: column;
 
   max-width: 690px;
+}
+
+@media screen and (max-width: 690px) {
+  .intro__text-box {
+    max-width: 100%;
+  }
 }
 
 .intro__title {
@@ -197,18 +313,31 @@ intro */
   font-weight: 900;
 }
 
+@media screen and (max-width: 767px) {
+  .intro__title {
+    font-size: 32px;
+    line-height: 1.09;
+  }
+}
+
 .intro__text {
   margin-top: 40px;
   margin-bottom: 0;
 
   font-size: 16px;
-  line-height: 1.63;
+  line-height: 1.65;
 }
 
 .intro__list {
   margin: 33px 0 0 0;
   padding: 0;
   list-style: none;
+}
+
+@media screen and (max-width: 767px) {
+  .intro__list {
+    margin-top: 34px;
+  }
 }
 
 .intro__list-item {
@@ -235,6 +364,19 @@ photo-grid */
   }
 }
 
+@media screen and (max-width: 1023px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
 .photo-grid__item {
   width: 100%;
 }
@@ -249,6 +391,18 @@ places */
   margin-top: 92px;
 }
 
+@media screen and (max-width: 1023px) {
+  .places {
+    margin-top: 88px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .places {
+    margin-top: 64px;
+  }
+}
+
 .place {
   display: grid;
   grid-template-columns: 460px 1fr;
@@ -260,6 +414,25 @@ places */
 @media screen and (max-width: 1279px) {
   .place {
     grid-template-columns: 440px 1fr;
+    column-gap: 32px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .place {
+    grid-template-columns: 340px 1fr;
+    column-gap: 28px;
+
+    margin-bottom: 73px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .place {
+    grid-template-columns: 100%;
+    row-gap: 32px;
+
+    margin-bottom: 50px;
   }
 }
 
@@ -273,6 +446,20 @@ places */
   font-size: 72px;
   line-height: 1.06;
   font-weight: 900;
+}
+
+@media screen and (max-width: 1023px) {
+  .place__title {
+    font-size: 42px;
+    line-height: 1.1;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .place__title {
+    font-size: 32px;
+    line-height: 1.09;
+  }
 }
 
 .place__website {
@@ -296,12 +483,29 @@ places */
   line-height: 1.22;
 }
 
+.place__image {
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .place__image {
+    transform: translateX(-16px);
+    width: 100vw;
+  }
+}
+
 .place__description-paragraph {
   margin-top: 0;
   margin-bottom: 26px;
 
   font-size: 18px;
-  line-height: 1.61;
+  line-height: 1.65;
+}
+
+@media screen and (max-width: 1023px) {
+  .place__description-paragraph {
+    font-size: 16px;
+  }
 }
 
 .place__description-paragraph:last-of-type {
@@ -315,6 +519,20 @@ cover */
   margin-top: 92px;
   margin-bottom: 92px;
   max-height: 740px;
+}
+
+@media screen and (max-width: 1023px) {
+  .cover {
+    margin-top: 90px;
+    margin-bottom: 88px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cover {
+    margin-top: 66px;
+    margin-bottom: 64px;
+  }
 }
 
 .cover__link {
@@ -357,7 +575,7 @@ cover */
 
 .cover__title {
   margin: 0;
-  max-width: 560px;
+  width: 560px;
 
   text-align: center;
   font-size: 72px;
@@ -365,14 +583,32 @@ cover */
   font-weight: 900;
 }
 
+@media screen and (max-width: 767px) {
+  .cover__title {
+    width: 288px;
+
+    font-size: 32px;
+    line-height: 1.09;
+  }
+}
+
 .cover__subtitle {
   margin-top: 32px;
   margin-bottom: 0;
-  max-width: 360px;
+  width: 360px;
 
   text-align: center;
   font-size: 18px;
   line-height: 1.22;
+}
+
+@media screen and (max-width: 767px) {
+  .cover__subtitle {
+    width: 288px;
+
+    font-size: 14px;
+    line-height: 1.14;
+  }
 }
 
 .cover__background {
@@ -391,6 +627,13 @@ footer */
   margin-bottom: 24px;
 }
 
+@media screen and (max-width: 767px) {
+  .footer {
+    flex-direction: column;
+    align-items:flex-start;
+  }
+}
+
 .footer__links {
   display: flex;
 
@@ -400,18 +643,45 @@ footer */
   list-style: none;
 }
 
-.footer__link {
-  margin-right: 18px;
+@media screen and (max-width: 767px) {
+  .footer__links {
+    flex-direction: column;
+  }
+}
 
+.footer__link {
   font-size: 16px;
   line-height: 1.13;
   text-decoration: none;
   color: #ffffff;
 }
 
-.footer__link:last-of-type {
-  /* margin-right: 0; */
-  /* Не работает, потому что ссылки вложены в <li>. Как исправить? */
+@media screen and (max-width: 767px) {
+  .footer__link {
+    font-size: 24px;
+    line-height: 1;
+  }
+}
+
+.footer__list-item {
+  margin-right: 18px;
+}
+
+@media screen and (max-width: 767px) {
+  .footer__list-item {
+    margin-right: 0;
+    margin-bottom: 32px;
+  }
+}
+
+.footer__list-item:last-of-type {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .footer__list-item:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .footer__copyright {
@@ -419,4 +689,12 @@ footer */
 
   font-size: 14px;
   line-height: 1.14;
+}
+
+@media screen and (max-width: 767px) {
+  .footer__copyright {
+    margin-top: 48px;
+
+    line-height: 1;
+  }
 }
