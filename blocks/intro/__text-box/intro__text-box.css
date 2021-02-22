@@ -1,0 +1,12 @@
+.intro__text-box {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 690px;
+}
+
+@media screen and (max-width: 690px) {
+  .intro__text-box {
+    max-width: 100%;
+  }
+}

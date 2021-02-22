@@ -1,0 +1,7 @@
+/* Можно ли так делать? */
+
+@media screen and (max-width: 1279px) {
+  .section_place_cover {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,19 @@
+.place__description-paragraph {
+  margin-top: 0;
+  margin-bottom: 26px;
+
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.place__description-paragraph:last-of-type {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 1023px) {
+  .place__description-paragraph {
+    margin-bottom: 25px;
+
+    font-size: 16px;
+  }
+}

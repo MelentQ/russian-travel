@@ -1,0 +1,25 @@
+.cover__link {
+  display: block;
+  position: relative;
+
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.cover__link:before {
+  content: '';
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-color: #2A2C2F;
+  opacity: 0.3;
+  transition: opacity 0.5s ease;
+}
+
+.cover__link:hover:before {
+  opacity: 0.8;
+}

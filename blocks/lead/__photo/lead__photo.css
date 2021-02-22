@@ -1,0 +1,19 @@
+.lead__photo {
+  display: block;
+
+  width: 100%;
+}
+
+@media screen and (max-width: 1023px) {
+  .lead__photo {
+    transform: translateX(-24px);
+    width: 100vw;
+    /* Растянул на всю ширину экрана */
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .lead__photo {
+    transform: translateX(-16px);
+  }
+}
