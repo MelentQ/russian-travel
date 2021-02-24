@@ -1,7 +1,17 @@
 .cover__link {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
 
+  /* Танцы с бубном: 0.625 это отношение высоты к ширине изображения. Делаю padding сверху и снизу, чтобы сам блок (высотой в 740px) находился по середине, это нужно для выравнивания текста по центру. */
+  padding-top: calc(31.25% - 370px);
+  padding-bottom: calc(31.25% - 370px);
+  min-height: 740px;
+
+  background-image: url(../../../images/cover__background.jpg);
+  background-size: cover;
   color: #ffffff;
   text-decoration: none;
 }
@@ -22,4 +32,28 @@
 
 .cover__link:hover:before {
   opacity: 0.8;
+}
+
+@media screen and (max-width: 1279px) {
+  .cover__link {
+    padding-top: calc(31.25% - 320px);
+    padding-bottom: calc(31.25% - 320px);
+    min-height: 640px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .cover__link {
+    padding-top: calc(31.25% - 240px);
+    padding-bottom: calc(31.25% - 240px);
+    min-height: 480px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cover__link {
+    padding-top: calc(31.25% - 100px);
+    padding-bottom: calc(31.25% - 100px);
+    min-height: 200px;
+  }
 }
